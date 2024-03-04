@@ -1,0 +1,106 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <img class="image1" src="https://pics.craiyon.com/2023-08-06/deb516cff8a74d9796d0321926518848.webp" alt="">
+    <div class="body">
+    <h1>Melody Generator</h1>
+    <div class="cont">
+        <div class="input">
+        <label for="seed">Seed:</label>
+        <input type="text" name="seed" id="seed" placeholder="Enter seed...">
+        </div>
+        <div class="format">
+        <label for="format">Format:</label>
+        <select id="format">
+            <option value="midi">MIDI</option>
+        </select>
+        </div>
+        <button onclick="generateMelody()">Generate Melody</button>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script>
+        // function generateMelody() {
+        //     const seed = document.getElementById('seed').value;
+        //     const format = document.getElementById('format').value;
+
+        //     fetch(`/generate-melody?seed=${seed}&format=${format}`)
+        //         .then(response => response.json());
+        // }
+
+        // function handleChange(event) {
+        //     console.log("Data is : ", event.target.value);
+        // }
+
+    </script>
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <div class="body">
+
+        <div class="image">
+            <img id="image1" src="{{ url_for('static', filename='PIANO.png') }}" />
+            <!-- <img id="image1" src="C:\Users\rajes\OneDrive\Desktop\MUSIC_AI - Copy\static\PIANO.png" /> -->
+        </div>
+
+        <div class="container">
+
+            <div class="left">
+
+                <div class="text">
+                    <p>CREATE YOUR <br>OWN TUNE</p>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="input">
+                    <div class="selector format">
+                        <p id="note2">SELECT COUNTRY TUNE </p>
+                        <select name="format" id="format" onchange="handleChange(event)">
+                            <option selected disabled>Select Here</option>
+                            <option value="midi">German</option>
+                            <!-- <option value="indian">Indian</option> -->
+                            <option value="Romania">Romanian</option>
+                            <!-- <option value="midi">MIDI</option> -->
+                            <option value="England">English</option>
+                            <option value="India">Indian</option>
+                        </select>
+                    </div>
+
+                    <div class="tune">
+                        <pre id="note">ENTER MIDI NOTATION</pre><label for="seed"></label>
+                        <input type="text" name="seed" id="seed"
+                        
+                        >
+                    </div>
+                    <div class="button">
+                        <button onclick="generateMelody()"> Generate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
